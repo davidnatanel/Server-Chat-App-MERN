@@ -13,8 +13,7 @@ require("dotenv").config()
 
 
 app.use(cors({
-  origin:"*",
-  credential:true
+  origin:"http://localhost:3000"
 }));
 app.use(express.json());
 
@@ -42,7 +41,7 @@ const server = app.listen(process.env.PORT, ()=>{
 //socket
 const io = socket(server,{
     cors:{
-      origin:"*",
+      origin:"http://localhost:3000",
           credential:true
     }
 })
