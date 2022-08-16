@@ -6,6 +6,7 @@ const userRoutes = require("./routes/userRoutes")
 const messageRoute = require("./routes/messagesRoute");
 const socket  = require("socket.io");
 
+console.log("hola1")
 
 const app= express();
 
@@ -75,3 +76,5 @@ io.on("connection", (socket) => {
    })
   
 });
+
+console.log("hola")
