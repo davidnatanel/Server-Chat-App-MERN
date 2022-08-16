@@ -37,9 +37,7 @@ const server = app.listen(process.env.PORT, ()=>{
 //socket
 const io = socket(server,{
     cors:{
-        origin:"*",
-        methods: ["GET", "POST"],
-        credential:true
+      origins: '*:*'
     }
 })
 // const io = socket(server,{
