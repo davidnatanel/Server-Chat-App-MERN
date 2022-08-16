@@ -18,6 +18,9 @@ app.use(cors({
 app.use(express.json());
 
 
+app.use("/", (req,res,)=>{
+  res.json({"msg":"hola"})
+});
 
 app.use("/api/auth",userRoutes);
 app.use("/api/messages",messageRoute);
