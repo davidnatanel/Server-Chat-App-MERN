@@ -15,7 +15,10 @@ app.use(cors({
   origin:"*"
 }));
 app.use(express.json());
-
+app.get('/active', (req, res) => {
+ 
+  res.send('active')
+})
 
 // app.use("/", (req,res,)=>{
 //   res.json({"msg":"hola"})
@@ -38,6 +41,7 @@ mongoose.connect(UrlDB,{
 const server = app.listen(process.env.PORT, ()=>{
     console.log(`Server Started on Port ${process.env.PORT}`);
 })
+
 
 
 //socket
