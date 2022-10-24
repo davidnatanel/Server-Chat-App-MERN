@@ -34,6 +34,7 @@ next(error);
 
 
 module.exports.login=async (req,res,next)=>{
+    console.log("aca")
     try {
         const {username,password} = req.body;
 

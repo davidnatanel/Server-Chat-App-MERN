@@ -6,8 +6,6 @@ const userRoutes = require("./routes/userRoutes")
 const messageRoute = require("./routes/messagesRoute");
 const socket  = require("socket.io");
 
-console.log("hola1")
-
 const app= express();
 
 require("dotenv").config()
@@ -19,14 +17,14 @@ app.use(cors({
 app.use(express.json());
 
 
-app.use("/", (req,res,)=>{
-  res.json({"msg":"hola"})
-});
+// app.use("/", (req,res,)=>{
+//   res.json({"msg":"hola"})
+// });
 
 app.use("/api/auth",userRoutes);
 app.use("/api/messages",messageRoute);
 
-var UrlDB= 'mongodb+srv://davidgomez:davidgomez@cluster0.c4fjwjo.mongodb.net/?retryWrites=true&w=majority' || process.env.MONGO_URL;
+var UrlDB= 'mongodb+srv://DavidNatanael:Zz5ACAbGiTsBPuRz@cluster0.wohdcms.mongodb.net/?retryWrites=true&w=majority' || process.env.MONGO_URL;
 
 
 mongoose.connect(UrlDB,{
@@ -75,5 +73,3 @@ io.on("connection", (socket) => {
    })
   
 });
-
-console.log("hola")
