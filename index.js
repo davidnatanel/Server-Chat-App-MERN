@@ -20,14 +20,10 @@ app.get('/active', (req, res) => {
   res.send('active')
 })
 
-// app.use("/", (req,res,)=>{
-//   res.json({"msg":"hola"})
-// });
-
 app.use("/api/auth",userRoutes);
 app.use("/api/messages",messageRoute);
 
-var UrlDB= 'mongodb+srv://DavidNatanael:Zz5ACAbGiTsBPuRz@cluster0.wohdcms.mongodb.net/?retryWrites=true&w=majority' || process.env.MONGO_URL;
+var UrlDB= process.env.NODE_ENV == 'production'? process.env.PRODUCTION_MONGO_URL:process.env.LOCAL_MONGO_URL ;
 
 
 mongoose.connect(UrlDB,{
@@ -50,12 +46,6 @@ const io = socket(server,{
     origin:"*"
   }
 })
-// const io = socket(server,{
-//   cors:{
-//       origin:"http://localhost:3000",
-//       credential:true
-//   }
-// })
 
 
 global.onlineUsers = new Map();
